@@ -17,14 +17,14 @@ HDR = r'^[0-9-]+ [0-9:.]+ +[0-9]+ +[0-9]+ '
 PATTERNS = [
     r'^10-15 ',                                      # 10. hó 15-én
     r'^10-15 10:18:51\.',                            # 10-15 10:18:51
-    r'^[0-9-]+ [0-9]{2}:[0-9]{2}:51\.',              # bármely perc, 51 mp
+    r'^[0-9-]+ [0-9]+:[0-9]+:51\.',                  # bármely perc, 51 mp
     HDR + r'[IDVEFAW] lowmemorykiller *:',           # lowmemorykiller tag
-    r'^[0-9-]+ 10:18:51\.[0-9]+ +221 +[0-9]+ ',      # 10:18:51, PID 221
+    r'^[0-9-]+ 10:18:51\.[0-9]+ +221 ',              # 10:18:51, PID 221
     HDR + r'E ',                                     # hibák
     HDR + r'W PackageManager *:',                    # PackageManager warning
-    HDR + r'D ExoPlayer[^:\s]* *:',                  # ExoPlayer debug
-    HDR + r'[EW] .*\.java:',                         # .java pozíció E/W sorban
-    HDR + r'[IDVEFAW] [^:]*: .*Thread',              # Thread az üzenetben
+    HDR + r'D .*ExoPlayer',                          # ExoPlayer debug (a sorban bárhol)
+    HDR + r'[EW] .*\.java:[0-9]+',                  # .java pozíció E/W sorban
+    HDR + r'[IDVEFAW] [^:]+:.*Thread',               # Thread az üzenetben
 ]
 
 
